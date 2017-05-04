@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>knockout</title>
+    <script type="text/javascript" src="lib/knockout-3.4.2.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/html" id="knockout-test-root">
+        <ul data-bind="foreach: list">
+            <li>
+                <div data-bind="text: $data.name"></div>
+                <div data-bind="text: $data.age"></div>
+            </li>
+        </ul>
+    </script>
+</head>
+
+<body>
+    <div id="view" data-bind='template: type'></div>
+</body>
+
+</html>
