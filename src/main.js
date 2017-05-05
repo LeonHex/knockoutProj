@@ -1,34 +1,68 @@
+var viewModel, vmOrigin;
+
 window.onload = function () {
     console.log("knockout test begin=====================");
-    var viewModel = {
+    vmOrigin = {
         type: "knockout-test-root",
+        obj: {
+            inner: {
+                core: 1
+            }
+        },
         list: [
             {
-                name: '1',
+                name: {
+                    firstName: 'Li1',
+                    lastName: 'Nan'
+                },
                 age: 18
             }
             , {
-                name: '2',
+                name: {
+                    firstName: 'Li2',
+                    lastName: 'Nan'
+                },
                 age: 19
             }
             , {
-                name: '3',
+                name: {
+                    firstName: 'Li3',
+                    lastName: 'Nan'
+                },
                 age: 20
             }
             , {
-                name: '4',
+                name: {
+                    firstName: 'Li4',
+                    lastName: 'Nan'
+                },
                 age: 21
             }
             , {
-                name: '5',
+                name: {
+                    firstName: 'Li5',
+                    lastName: 'Nan'
+                },
                 age: 22
             }
             , {
-                name: '6',
+                name: {
+                    firstName: 'Li6',
+                    lastName: 'Nan'
+                },
                 age: 23
             }
         ]
     }
+    viewModel = ko.mapping.fromJS(vmOrigin);
     var tempNode = document.getElementById("view");
     ko.applyBindings(viewModel, tempNode);
 };
+
+var modifyList = function () {
+    console.log("modify list element======================");
+    // vmOrigin.list[0].name = '11';
+    // viewModel.list()[0].name(11);
+    console.info(viewModel.obj);
+    // ko.mapping.fromJS(vmOrigin, viewModel);
+}
