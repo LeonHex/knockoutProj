@@ -67,12 +67,15 @@ var modifyList = function () {
     // ko.mapping.fromJS(vmOrigin, viewModel);
     var tempArr = ko.mapping.fromJS(vmOrigin.list);
     // viewModel.list([]);
-//     viewModel.list = tempArr;
-//     var a = tempArr();
-//     tempArr([]);
-//     tempArr(a);
+    // viewModel.list = tempArr;
+    // var a = tempArr();
+    // tempArr([]);
+    // tempArr(a);
     // viewModel.list(viewModel.list);
+
+    //this one works!!!
     viewModel.list(tempArr());
+    
     // viewModel.list.replace(tempArr);
     console.log(viewModel.list()[0].name.firstName());
 }
