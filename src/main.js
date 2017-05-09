@@ -56,13 +56,23 @@ window.onload = function () {
     }
     viewModel = ko.mapping.fromJS(vmOrigin);
     var tempNode = document.getElementById("view");
+    console.log(viewModel.list()[0].name.firstName());
     ko.applyBindings(viewModel, tempNode);
 };
 
 var modifyList = function () {
     console.log("modify list element======================");
-    // vmOrigin.list[0].name = '11';
+    vmOrigin.list[0].name.firstName = '11';
     // viewModel.list()[0].name(11);
-    console.info(viewModel.obj);
     // ko.mapping.fromJS(vmOrigin, viewModel);
+    var tempArr = ko.mapping.fromJS(vmOrigin.list);
+    // viewModel.list([]);
+//     viewModel.list = tempArr;
+//     var a = tempArr();
+//     tempArr([]);
+//     tempArr(a);
+    // viewModel.list(viewModel.list);
+    viewModel.list(tempArr());
+    // viewModel.list.replace(tempArr);
+    console.log(viewModel.list()[0].name.firstName());
 }
